@@ -293,6 +293,113 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/04/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="carrot&tortoise">
+      <meta itemprop="description" content="一个想要成为 ICPCer 菜鸡的新晋 byr CS 乌龟和他的中国农大金融女友萝卜">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萝卜乌龟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/04/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">数学基础</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-01-04 23:13:04" itemprop="dateCreated datePublished" datetime="2023-01-04T23:13:04+08:00">2023-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-05 00:22:52" itemprop="dateModified" datetime="2023-01-05T00:22:52+08:00">2023-01-05</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="EOF"><a href="#EOF" class="headerlink" title="EOF"></a>EOF</h2><p>输入不说明几个 Input Block，以 <strong>EOF</strong> 为结束标志</p>
+<blockquote>
+<p><code>EOF</code> <em>(End Of File)</em> 为预定的保留值，通常为 -1</p>
+</blockquote>
+<h3 id="C-语言实现"><a href="#C-语言实现" class="headerlink" title="C 语言实现"></a>C 语言实现</h3><p><code>while(scanf(&quot;%d%d&quot;, &amp;a, &amp;b) != EOF)</code><br>或者<br><code>while(scanf(&quot;%d%d&quot;, &amp;a, &amp;b) == 2)</code></p>
+<blockquote>
+<p><code>scanf</code> 的返回值：成功读取数据的个数<br>两种方法中后者可读性更好</p>
+</blockquote>
+<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++ 实现"></a>C++ 实现</h3><p><code>while(cin &gt;&gt; a &gt;&gt; b)</code></p>
+<blockquote>
+<p>输入流读到 EOF 返回 0</p>
+</blockquote>
+<h2 id="相关大小"><a href="#相关大小" class="headerlink" title="相关大小"></a>相关大小</h2><p>32 位 <code>int</code> 最大 <strong>21亿+</strong> <em>(2147483647)<em><br>64 位 <code>long long</code> 最大 <em>9223372036854775807</em><br>CPU 一秒运算**千万级</em></em></p>
+<h2 id="约数个数定理"><a href="#约数个数定理" class="headerlink" title="约数个数定理"></a>约数个数定理</h2><p>对于一个大于 1 的正整数 n 可以分解质因数：$n&#x3D;\prod_{i&#x3D;1}^{k}{ {p_i}^{a_i} }$<br>则 n 的正约数的个数就是 $f(n)&#x3D;\prod_{i&#x3D;1}^{k}{a_i+1}$</p>
+<h2 id="防爆处理"><a href="#防爆处理" class="headerlink" title="防爆处理"></a>防爆处理</h2><p>为防止爆 <code>int</code> 或 <code>long long</code>，可采用先除后乘的思考<br>如采用<br><code>LCM(A, B) = A / GCD(A, B) * B</code> <br>而不是<br><code>LCM(A, B) = A * B / GCD(A, B)</code></p>
+<h2 id="辗转相除法求-GCD"><a href="#辗转相除法求-GCD" class="headerlink" title="辗转相除法求 GCD"></a>辗转相除法求 GCD</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (!b) &#123;</span><br><span class="line">        temp = a % b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="抽屉原理"><a href="#抽屉原理" class="headerlink" title="抽屉原理"></a>抽屉原理</h2><p>可用抽屉原理判断状态有穷且重复有周期<br>如个位数判断</p>
+<h2 id="快速幂运算"><a href="#快速幂运算" class="headerlink" title="快速幂运算"></a>快速幂运算</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span>)      <span class="comment">//奇数情况，补偿损失</span></span><br><span class="line">            ans *= a;   </span><br><span class="line">        a = a * a;      <span class="comment">//底数平方</span></span><br><span class="line">        n /= <span class="number">2</span>;         <span class="comment">//指数减半</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p>对于已排序（这里是升序）的序列</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">BiSearch</span><span class="params">(<span class="type">int</span> a[], <span class="type">int</span> n, <span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = n - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> middle;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;             <span class="comment">//注意等号不能少</span></span><br><span class="line">        middle = (left + right) / <span class="number">2</span>;    <span class="comment">//整数除法</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (a[middle] == x)</span><br><span class="line">            <span class="keyword">return</span> middle;              <span class="comment">//找到的情况</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (x &gt; a[middle])</span><br><span class="line">            left = middle + <span class="number">1</span>;          <span class="comment">//如果比中值大</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right = middle - <span class="number">1</span>;         <span class="comment">//如果比中值小</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C++ 中 <code>binary_search</code> 函数<br><code>binary_search(beg, end, val)</code> <br>返回一个 <code>bool</code> 值，指出序列中是否包含等于 <code>val</code> 的元素</p>
+<h2 id="三分查找"><a href="#三分查找" class="headerlink" title="三分查找"></a>三分查找</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LeftThird = (Left * <span class="number">2</span> + Right) / <span class="number">3</span>;</span><br><span class="line">RightThird = (Left + Right * <span class="number">2</span>) / <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>三分查找可以找凹凸图形的极值<br>某种情况下等价于求导后再进行二分查找</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/%E4%BA%94%E5%A4%A7%E6%88%98%E5%8C%BA%E6%88%98%E7%95%A5%E6%94%B9%E9%9D%A9%E4%B8%8E%E5%9B%9B%E4%B8%AA%E7%AA%81%E7%A0%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -990,99 +1097,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/%E4%BB%A5%E6%88%98%E7%95%A5%E7%A7%91%E5%AD%A6%E5%AE%B6%E4%B8%BA%E7%9B%AE%E6%A0%87%EF%BC%8C%E6%88%90%E5%B0%B1%E7%A5%96%E5%9B%BD%E7%A7%91%E6%8A%80%E4%BA%BA%E6%89%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="carrot&tortoise">
-      <meta itemprop="description" content="一个想要成为 ICPCer 菜鸡的新晋 byr CS 乌龟和他的中国农大金融女友萝卜">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="萝卜乌龟">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/03/%E4%BB%A5%E6%88%98%E7%95%A5%E7%A7%91%E5%AD%A6%E5%AE%B6%E4%B8%BA%E7%9B%AE%E6%A0%87%EF%BC%8C%E6%88%90%E5%B0%B1%E7%A5%96%E5%9B%BD%E7%A7%91%E6%8A%80%E4%BA%BA%E6%89%8D/" class="post-title-link" itemprop="url">以战略科学家为目标，成就祖国科技人才</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-01-03 21:10:56 / 修改时间：22:07:43" itemprop="dateCreated datePublished" datetime="2023-01-03T21:10:56+08:00">2023-01-03</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>培养战略科学家</p>
-</blockquote>
-<blockquote>
-<p>二十大报告指出：“加快建设国家战略人才力量，努力培养造就更多大师、战略科学家、一流科技领军人才和创新团队、青年科技人才、卓越工程师、大国工匠、高技能人才。加强人才国际交流，用好用活各类人才。深化人才发展体制机制改革，真心爱才、悉心育才、倾心引才、精心用才，求贤若渴，不拘一格，把各方面优秀人才集聚到党和人民事业中来。”</p>
-</blockquote>
-<blockquote>
-<p>请结合材料和本课程所学知识，自选角度，自拟题目，谈谈对“战略科学家”的理解，并结合自身未来发展规划予以解读。论文字数不低于2500字</p>
-</blockquote>
-<p>在2021年的中央人才工作会议上，习总书记首次提出“战略科学家”一词。2022年《国家“十四五”期间人才发展规划》以及二十大会议报告上，再次强调了要大力培养使用战略科学家，打造大批一流科技领军人才和创新团队的决策。战略科学家是“帅才型科学家”，是国家战略人才力量中的“关键少数”，是推动科技创新与高技术产业跨越发展的“领路人”，是国家科技发展战略的“关键因子”，不可或缺，无可替代。几十年来，以钱学森、唐敖庆、王大珩、黄大年、孙家栋、刘永坦为代表的等一众公认的战略科学家，为国家科技发展做出的贡献，绝非时间能够磨灭。<br>我从小便有着成为科学家的梦想，二十大报告后，握有学习了相关报告、听取了习总书记的有关讲话，结合个人学习、生活经验，总结出了战略科学家往往具有以下能力。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/03/%E4%BB%A5%E6%88%98%E7%95%A5%E7%A7%91%E5%AD%A6%E5%AE%B6%E4%B8%BA%E7%9B%AE%E6%A0%87%EF%BC%8C%E6%88%90%E5%B0%B1%E7%A5%96%E5%9B%BD%E7%A7%91%E6%8A%80%E4%BA%BA%E6%89%8D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1154,14 +1168,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1211,12 +1225,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">31k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
@@ -1226,7 +1240,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共23.6k字</span>
+  <span class="post-count">全站共24.1k字</span>
 </div>
 
 
